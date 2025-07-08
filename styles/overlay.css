@@ -1,0 +1,70 @@
+.overlay-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+  background-color: #03101d;
+}
+.overlay-bg.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 아이템 공통 스타일 */
+.overlay-bg .item {
+  position: absolute;
+  width: 600px; /* 원하는 크기 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.3;
+}
+
+/* 이미지 스타일 (반드시 부모 크기에 맞게) */
+.overlay-bg .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+.overlay-bg .item.left {
+  top: 0;
+  left: 10vw;
+}
+.overlay-bg .item.right {
+  bottom: 0;
+  right: 10vw;
+}
+/* 왼쪽 아이템: top 0에서 위로 계속 올라가는 애니메이션 */
+/* 오른쪽 아이템: bottom 0에서 아래로 계속 내려가는 애니메이션 */
+.overlay-bg.active .item.left {
+  animation: up-move-continuous 20s linear infinite;
+}
+.overlay-bg.active .item.right {
+  animation: down-move-continuous 20s linear infinite;
+}
+/* 애니메이션 정의 */
+@keyframes up-move-continuous {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes down-move-continuous {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
