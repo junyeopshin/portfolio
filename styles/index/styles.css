@@ -1,0 +1,81 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+.wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0;
+  gap: 50px;
+  z-index: 2;
+}
+
+/* 타이틀 */
+.title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.title span {
+  font-size: 36px;
+  font-weight: 700;
+}
+.title p {
+  font-size: 20px;
+  text-align: center;
+  color: #767676;
+}
+
+/* 콘텐츠 버튼 */
+.contents {
+  position: relative;
+  display: flex;
+  gap: 100px;
+}
+.contents > a {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background-color: #1e1e1e;
+  border-radius: 25px;
+  opacity: 1;
+  transition: opacity 0.3s, box-shadow 0.3s;
+}
+.contents > a:hover {
+  box-shadow: inset 0 0 20px 4px rgba(255, 255, 255, 0.15);
+}
+.contents > a.dimmed {
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+.contents > a > img {
+  width: 50%;
+  height: 50%;
+}
+.contents > a > span {
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+}
+.footer {
+  font-size: 16px;
+  font-weight: 500;
+}
+.hover-white {
+  color: #fff !important;
+  transition: color 0.5s;
+}

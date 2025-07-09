@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 /* 이미지 스타일 (반드시 부모 크기에 맞게) */
