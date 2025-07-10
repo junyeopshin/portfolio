@@ -1,4 +1,4 @@
-// 변수선언
+// ===== 변수 선언 =====
 const main = document.querySelector(".main");
 const desBg = document.querySelector(".overlay-design");
 const pubBg = document.querySelector(".overlay-publishing");
@@ -10,8 +10,10 @@ const contentLinks = document.querySelectorAll(".contents > a");
 const titleSpan = document.querySelector(".title span");
 const titleP = document.querySelector(".title p");
 const footer = document.querySelector(".footer");
+const modal = document.getElementById("modal");
+const closeBtn = document.querySelector(".modal-close-btn");
 
-// gnb 초기상태
+// ===== gnb 초기상태 =====
 desBox.classList.add("hide");
 pubBox.classList.add("hide");
 
@@ -31,6 +33,7 @@ document.querySelectorAll(".gnb > ul > li > a.mainmenu").forEach((link) => {
     } else if (menu === "Publishing") {
       showMenu(pubBox, gnbBox, desBox);
     }
+    // "About Me"는 아래에서 별도 처리
   });
 });
 
@@ -59,10 +62,9 @@ contentLinks.forEach((link) => {
   });
 
   link.addEventListener("mouseleave", () => {
-    // 오버레이 비활성화
+    // 오버레이 비활성화 및 흐림 효과 해제
     desBg.classList.remove("active");
     pubBg.classList.remove("active");
-    // 흐림 효과 해제
     contentLinks.forEach((other) => {
       other.classList.remove("dimmed");
     });
@@ -76,10 +78,45 @@ contents.addEventListener("mouseenter", () => {
   footer.classList.add("hover-white");
   main.style.backgroundColor = "#03101d";
 });
-
 contents.addEventListener("mouseleave", () => {
   titleSpan.classList.remove("hover-white");
   titleP.classList.remove("hover-white");
   footer.classList.remove("hover-white");
   main.style.backgroundColor = "";
+});
+
+// ===== "About Me" 클릭 시 모달 오픈/클로즈 =====
+const aboutMeLink = Array.from(
+  document.querySelectorAll(".gnb > ul > li > a.mainmenu")
+).find((a) => a.textContent.trim() === "About Me");
+
+function openModal() {
+  modal.style.visibility = "visible";
+  modal.style.pointerEvents = "auto";
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+  setTimeout(() => {
+    modal.style.visibility = "hidden";
+    modal.style.pointerEvents = "none";
+  }, 400); // transition 시간과 맞춤
+}
+
+if (aboutMeLink) {
+  aboutMeLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal();
+  });
+}
+if (closeBtn) {
+  closeBtn.addEventListener("click", closeModal);
+}
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && modal.classList.contains("open")) {
+    closeModal();
+  }
 });
