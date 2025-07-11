@@ -1,17 +1,9 @@
-// ===== 변수 선언 =====
+// 주요 DOM 요소 선택
 const main = document.querySelector(".main");
-const desBg = document.querySelector(".overlay-design");
-const pubBg = document.querySelector(".overlay-publishing");
-const photoBg = document.querySelector(".overlay-photoshop");
 const gnbBox = document.querySelector(".gnb > ul");
 const desBox = document.querySelector(".gnb > .design");
 const pubBox = document.querySelector(".gnb > .publishing");
 const photoBox = document.querySelector(".gnb > .photoshop");
-const contents = document.querySelector(".contents");
-const contentLinks = document.querySelectorAll(".contents > a");
-const titleSpan = document.querySelector(".title span");
-const titleP = document.querySelector(".title p");
-const footer = document.querySelector(".footer");
 const modal = document.getElementById("modal");
 const closeBtn = document.querySelector(".modal-close-btn");
 
@@ -53,49 +45,7 @@ document
     });
   });
 
-// ===== 컨텐츠 링크(카드) 인터랙션 =====
-contentLinks.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    // 오버레이 활성화
-    if (link.classList.contains("design")) {
-      desBg.classList.add("active");
-    } else if (link.classList.contains("publishing")) {
-      pubBg.classList.add("active");
-    } else if (link.classList.contains("photoshop")) {
-      photoBg.classList.add("active");
-    }
-    // 나머지 링크 흐리게
-    contentLinks.forEach((other) => {
-      if (other !== link) other.classList.add("dimmed");
-    });
-  });
-
-  link.addEventListener("mouseleave", () => {
-    // 오버레이 비활성화 및 흐림 효과 해제
-    desBg.classList.remove("active");
-    pubBg.classList.remove("active");
-    photoBg.classList.remove("active");
-    contentLinks.forEach((other) => {
-      other.classList.remove("dimmed");
-    });
-  });
-});
-
-// ===== 컨텐츠 영역 전체 호버 시 효과 =====
-contents.addEventListener("mouseenter", () => {
-  titleSpan.classList.add("hover-white");
-  titleP.classList.add("hover-white");
-  footer.classList.add("hover-white");
-  main.style.backgroundColor = "#03101d";
-});
-contents.addEventListener("mouseleave", () => {
-  titleSpan.classList.remove("hover-white");
-  titleP.classList.remove("hover-white");
-  footer.classList.remove("hover-white");
-  main.style.backgroundColor = "";
-});
-
-// ===== "About Me" 클릭 시 모달 오픈/클로즈 =====
+// "About Me" 모달 오픈/클로즈
 const aboutMeLink = Array.from(
   document.querySelectorAll(".gnb > ul > li > a.mainmenu")
 ).find((a) => a.textContent.trim() === "About Me");
@@ -129,4 +79,27 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.classList.contains("open")) {
     closeModal();
   }
+});
+
+// Isotope 콘텐츠 필터링
+window.addEventListener("load", () => {
+  const grid = new Isotope(".section", {
+    itemSelector: "article",
+    transitionDuration: "0.3s",
+    masonry: { columnWidth: "article" },
+  });
+
+  const btns = document.querySelectorAll(".sorting > li");
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const sort = btn.querySelector("a").getAttribute("href");
+      grid.arrange({ filter: sort });
+
+      btns.forEach((el) => el.classList.remove("on"));
+      btn.classList.add("on");
+    });
+  });
 });
