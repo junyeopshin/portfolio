@@ -48,8 +48,8 @@
   stroke-dashoffset: 0;
 }
 
-/* 디자인메뉴 */
-.gnb .design {
+/* UIUX 메뉴 */
+.gnb .uiux {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -63,7 +63,7 @@
   border-radius: 50px;
   background: #000;
 }
-.gnb .design img {
+.gnb .uiux img {
   width: 40px;
   height: 40px;
   object-fit: cover;
@@ -91,8 +91,8 @@
   object-fit: cover;
   cursor: pointer;
 }
-/* 포토샵 메뉴 */
-.gnb .photoshop {
+/* 디자인 메뉴 */
+.gnb .design {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -106,7 +106,7 @@
   border-radius: 50px;
   background: #000;
 }
-.gnb .photoshop img {
+.gnb .design img {
   width: 40px;
   height: 40px;
   object-fit: cover;
@@ -115,9 +115,9 @@
 
 /* 전환 부드럽게 */
 .gnb > ul,
-.gnb > .design,
+.gnb > .uiux,
 .gnb > .publishing,
-.gnb > .photoshop {
+.gnb > .design {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -125,17 +125,17 @@
 }
 
 .gnb > ul.hide,
-.gnb > .design.hide,
+.gnb > .uiux.hide,
 .gnb > .publishing.hide,
-.gnb > .photoshop.hide {
+.gnb > .design.hide {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 .gnb > ul,
-.gnb > .design,
+.gnb > .uiux,
 .gnb > .publishing,
-.gnb > .photoshop {
+.gnb > .design {
   pointer-events: auto;
 }
 

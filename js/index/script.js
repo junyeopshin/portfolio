@@ -1,12 +1,12 @@
 // ===== 변수 선언 =====
 const main = document.querySelector(".main");
-const desBg = document.querySelector(".overlay-design");
+const uiuxBg = document.querySelector(".overlay-uiux");
 const pubBg = document.querySelector(".overlay-publishing");
-const photoBg = document.querySelector(".overlay-photoshop");
+const desBg = document.querySelector(".overlay-design");
 const gnbBox = document.querySelector(".gnb > ul");
-const desBox = document.querySelector(".gnb > .design");
+const uiuxBox = document.querySelector(".gnb > .uiux");
 const pubBox = document.querySelector(".gnb > .publishing");
-const photoBox = document.querySelector(".gnb > .photoshop");
+const desBox = document.querySelector(".gnb > .design");
 const contents = document.querySelector(".contents");
 const contentLinks = document.querySelectorAll(".contents > a");
 const titleSpan = document.querySelector(".title span");
@@ -16,9 +16,9 @@ const modal = document.getElementById("modal");
 const closeBtn = document.querySelector(".modal-close-btn");
 
 // ===== gnb 초기상태 =====
-desBox.classList.add("hide");
+uiuxBox.classList.add("hide");
 pubBox.classList.add("hide");
-photoBox.classList.add("hide");
+desBox.classList.add("hide");
 
 // ===== 메뉴 전환 함수 =====
 function showMenu(showEl, ...hideEls) {
@@ -31,12 +31,12 @@ document.querySelectorAll(".gnb > ul > li > a.mainmenu").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const menu = link.textContent.trim();
-    if (menu === "Design") {
-      showMenu(desBox, gnbBox, pubBox, photoBox);
+    if (menu === "UI/UX") {
+      showMenu(uiuxBox, gnbBox, pubBox, desBox);
     } else if (menu === "Publishing") {
-      showMenu(pubBox, gnbBox, desBox, photoBox);
-    } else if (menu === "Photoshop") {
-      showMenu(photoBox, gnbBox, desBox, pubBox);
+      showMenu(pubBox, gnbBox, uiuxBox, desBox);
+    } else if (menu === "Design") {
+      showMenu(desBox, gnbBox, uiuxBox, pubBox);
     }
     // "About Me"는 아래에서 별도 처리
   });
@@ -45,11 +45,11 @@ document.querySelectorAll(".gnb > ul > li > a.mainmenu").forEach((link) => {
 // ===== 뒤로가기(화살표) 클릭 시 메인 메뉴로 복귀 =====
 document
   .querySelectorAll(
-    ".gnb > .design > img, .gnb > .publishing > img, .gnb > .photoshop > img"
+    ".gnb > .uiux > img, .gnb > .publishing > img, .gnb > .design > img"
   )
   .forEach((img) => {
     img.addEventListener("click", () => {
-      showMenu(gnbBox, desBox, pubBox, photoBox);
+      showMenu(gnbBox, uiuxBox, pubBox, desBox);
     });
   });
 
@@ -57,12 +57,12 @@ document
 contentLinks.forEach((link) => {
   link.addEventListener("mouseenter", () => {
     // 오버레이 활성화
-    if (link.classList.contains("design")) {
-      desBg.classList.add("active");
+    if (link.classList.contains("uiux")) {
+      uiuxBg.classList.add("active");
     } else if (link.classList.contains("publishing")) {
       pubBg.classList.add("active");
-    } else if (link.classList.contains("photoshop")) {
-      photoBg.classList.add("active");
+    } else if (link.classList.contains("design")) {
+      desBg.classList.add("active");
     }
     // 나머지 링크 흐리게
     contentLinks.forEach((other) => {
@@ -72,9 +72,9 @@ contentLinks.forEach((link) => {
 
   link.addEventListener("mouseleave", () => {
     // 오버레이 비활성화 및 흐림 효과 해제
-    desBg.classList.remove("active");
+    uiuxBg.classList.remove("active");
     pubBg.classList.remove("active");
-    photoBg.classList.remove("active");
+    desBg.classList.remove("active");
     contentLinks.forEach((other) => {
       other.classList.remove("dimmed");
     });

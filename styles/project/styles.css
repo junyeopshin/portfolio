@@ -11,10 +11,54 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 200px;
+  padding: 50px 200px 100px;
   gap: 50px;
   z-index: 2;
 }
+.btns {
+  position: fixed;
+  right: 100px;
+  bottom: 0;
+  transform: translate(50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 3;
+}
+.home-btn {
+  position: relative;
+  background-color: #fff;
+  border-radius: 50px;
+  border: 3px solid #fff;
+  cursor: pointer;
+}
+.home-btn img {
+  width: 50px;
+  height: 50px;
+  filter: opacity(30%);
+}
+.home-btn:hover img {
+  filter: opacity(100%);
+  transition: filter 0.3s ease-in-out;
+}
+.top-btn {
+  position: relative;
+  background-color: #fff;
+  border-radius: 50px;
+  border: 3px solid #fff;
+  cursor: pointer;
+}
+.top-btn img {
+  width: 50px;
+  height: 50px;
+  filter: opacity(30%);
+}
+.top-btn:hover img {
+  filter: opacity(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
 .header {
   position: relative;
   width: 100%;
@@ -74,6 +118,7 @@
   position: relative;
   width: 33.33%;
   padding: 10px;
+  cursor: pointer;
 }
 .section > article > div {
   position: relative;
