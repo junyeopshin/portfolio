@@ -6,11 +6,10 @@
     <title>Yeop's Portfolio</title>
     <link rel="stylesheet" href="../styles/normalize.css" />
     <link rel="stylesheet" href="../styles/global.css" />
-    <link rel="stylesheet" href="../styles/project/modal.css" />
-    <link rel="stylesheet" href="../styles/project/gnb.css" />
-    <link rel="stylesheet" href="../styles/project/styles.css" />
-    <script src="../js/project/isotope.pkgd.min.js" defer></script>
-    <script src="../js/project/script.js" defer></script>
+    <link rel="stylesheet" href="../styles/runcanvas/modal.css" />
+    <link rel="stylesheet" href="../styles/runcanvas/gnb.css" />
+    <link rel="stylesheet" href="../styles/runcanvas/styles.css" />
+    <script src="../js/runcanvas/script.js" defer></script>
   </head>
   <body>
     <div id="modal">
@@ -126,8 +125,7 @@
         <img src="../assets/img/close-btn.png" alt="닫기" />
       </div>
     </div>
-
-    <main class="main">
+    <div class="main">
       <div class="wrap">
         <div class="btns">
           <div class="top-btn">
@@ -139,6 +137,10 @@
             </a>
           </div>
         </div>
+
+        <a href="project.html" class="page-close-btn">
+          <img src="../assets/img/close-btn.png" alt="닫기" />
+        </a>
 
         <nav class="gnb">
           <ul>
@@ -265,112 +267,52 @@
           </div>
         </nav>
 
-        <header class="header">
-          <h2>Project</h2>
-          <p>UI/UX 디자인 및 퍼블리싱 프로젝트 확인하기</p>
-        </header>
-
-        <!-- 필터링기능사용하기 -->
-        <ul class="sorting">
-          <li class="on"><a href="*">All</a></li>
-          <li><a href=".uiux">UI/UX</a></li>
-          <li><a href=".publishing">Publishing</a></li>
-          <li><a href=".design">Design</a></li>
-        </ul>
-
-        <section class="section">
-          <article class="uiux runcanvas">
-            <div>
-              <img src="../assets/img/RunCanvas/running.png" alt="RunCanvas" />
-              <div class="text">
-                <span>RunCanvas</span>
-                <ul>
-                  <li>Design</li>
-                  <li>Mobile</li>
-                  <li>UI/UX</li>
-                </ul>
-              </div>
+        <div class="content">
+          <img src="../assets/img/RunCanvas/로딩-소개-2.png" alt="이미지" />
+          <div class="loading">
+            <video
+              src="../assets/img/RunCanvas/running.mp4"
+              autoplay
+              muted
+              loop
+            ></video>
+            <img src="../assets/img/RunCanvas/로딩-영상.png" alt="이미지" />
+          </div>
+          <div class="detail">
+            <h2>RunCanvas</h2>
+            <div class="text">
+              <ul class="left">
+                <li>Project</li>
+                <li>Date</li>
+                <li>Skill Tool</li>
+                <li>Participation</li>
+                <li>Links</li>
+              </ul>
+              <ul class="right">
+                <li>RunCanvas App (팀프로젝트)</li>
+                <li>2025.06~07</li>
+                <li>
+                  <img src="../assets/img/icon-figma.png" alt="figma" />
+                  <img src="../assets/img/icon-photoshop.png" alt="photoshop" />
+                  <img
+                    src="../assets/img/icon-illustrator.png"
+                    alt="illustrator"
+                  />
+                </li>
+                <li>50%(설계+디자인)</li>
+                <li>
+                  <div class="links">
+                    <a href="#">Figma</a>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </article>
-          <article class="uiux">
-            <div>
-              <img
-                src="../assets/img/knowtaste/knowtaste.png"
-                alt="아는맛큼보인다"
-              />
-              <div class="text">
-                <span>아는맛큼보인다</span>
-                <ul>
-                  <li>Design</li>
-                  <li>Mobile</li>
-                  <li>UI/UX</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-          <article class="uiux publishing">
-            <div>
-              <img src="../assets/img/dongbaek/dongbaek.png" alt="동백여행사" />
-              <div class="text">
-                <span>동백여행사</span>
-                <ul>
-                  <li>Design</li>
-                  <li>Web</li>
-                  <li>Mobile</li>
-                  <li>UI/UX</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-          <article class="uiux publishing">
-            <div>
-              <img
-                src="../assets/img/jjtechouse/JJTechouse.png"
-                alt="JJTechouse"
-              />
-              <div class="text">
-                <span>JJTechouse</span>
-                <ul>
-                  <li>Design</li>
-                  <li>Html</li>
-                  <li>Css</li>
-                  <li>Web</li>
-                  <li>UI/UX</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-          <article class="uiux">
-            <div>
-              <img src="../assets/img/AI-Ondoor/aiOndoor.jpg" alt="AI-Ondoor" />
-              <div class="text">
-                <span>AI-Ondoor</span>
-                <ul>
-                  <li>Design</li>
-                  <li>Web</li>
-                  <li>Mobile</li>
-                  <li>UI/UX</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-          <article class="design">
-            <div>
-              <img
-                src="../assets/img/sennheiser-momentum4/sen-main-image.png"
-                alt="젠하이저 모멘텀4"
-              />
-              <div class="text">
-                <span>젠하이저 모멘텀4</span>
-                <ul>
-                  <li>Design</li>
-                  <li>Detail</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-        </section>
+          </div>
+        </div>
       </div>
-    </main>
+      <div class="ppt">
+        <img src="../assets/img/RunCanvas/RunCanvas.png" alt="상세페이지" />
+      </div>
+    </div>
   </body>
 </html>

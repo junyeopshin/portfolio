@@ -1,11 +1,11 @@
 // 주요 DOM 요소 선택
-const main = document.querySelector(".main");
 const gnbBox = document.querySelector(".gnb > ul");
 const uiuxBox = document.querySelector(".gnb > .uiux");
 const pubBox = document.querySelector(".gnb > .publishing");
 const desBox = document.querySelector(".gnb > .design");
 const modal = document.getElementById("modal");
-const closeBtn = document.querySelector(".modal-close-btn");
+const modalCloseBtn = document.querySelector(".modal-close-btn");
+const pageCloseBtn = document.querySelector(".page-close-btn");
 
 // go top 버튼 클릭 시 상단 이동
 document.querySelector(".top-btn").onclick = function () {
@@ -87,38 +87,11 @@ if (aboutMeLink) {
     openModal();
   });
 }
-if (closeBtn) {
-  closeBtn.addEventListener("click", closeModal);
+if (modalCloseBtn) {
+  modalCloseBtn.addEventListener("click", closeModal);
 }
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.classList.contains("open")) {
     closeModal();
   }
-});
-
-// Isotope 콘텐츠 필터링
-window.addEventListener("load", () => {
-  const grid = new Isotope(".section", {
-    itemSelector: "article",
-    transitionDuration: "0.3s",
-    masonry: { columnWidth: "article" },
-  });
-
-  const btns = document.querySelectorAll(".sorting > li");
-
-  btns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const sort = btn.querySelector("a").getAttribute("href");
-      grid.arrange({ filter: sort });
-
-      btns.forEach((el) => el.classList.remove("on"));
-      btn.classList.add("on");
-    });
-  });
-});
-
-document.querySelector("article.runcanvas").addEventListener("click", () => {
-  window.location.href = "runCanvas.html";
 });
