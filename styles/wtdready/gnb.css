@@ -1,0 +1,175 @@
+.gnb {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+.gnb ul {
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 100px;
+  background-color: #000;
+}
+.gnb ul li {
+  position: relative;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+  border-radius: 100px;
+  overflow: visible;
+}
+.gnb ul li a.mainmenu {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.gnb ul li .border-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.gnb ul li .border-anim path {
+  stroke-dasharray: 364;
+  stroke-dashoffset: 364;
+  transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gnb ul li:hover .border-anim path {
+  stroke-dashoffset: 0;
+}
+
+/* UIUX 메뉴 */
+.gnb .uiux {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  /* display: flex; */
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 50px;
+  background: #000;
+}
+.gnb .uiux img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* 퍼블리싱 메뉴 */
+.gnb .publishing {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  /* display: flex; */
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 50px;
+  background: #000;
+}
+.gnb .publishing img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  cursor: pointer;
+}
+/* 디자인 메뉴 */
+.gnb .design {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  /* display: flex; */
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 50px;
+  background: #000;
+}
+.gnb .design img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* 전환 부드럽게 */
+.gnb > ul,
+.gnb > .uiux,
+.gnb > .publishing,
+.gnb > .design {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  display: flex;
+}
+
+.gnb > ul.hide,
+.gnb > .uiux.hide,
+.gnb > .publishing.hide,
+.gnb > .design.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.gnb > ul,
+.gnb > .uiux,
+.gnb > .publishing,
+.gnb > .design {
+  pointer-events: auto;
+}
+
+/* 서브메뉴 */
+.submenu-list {
+  width: 100%;
+  display: flex;
+  padding: 5px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 50px;
+  background: #fff;
+}
+
+.submenu-list a.mainmenu {
+  display: flex;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.submenu-list a.submenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #bbb;
+  font-size: 20px;
+  white-space: nowrap;
+}
+.submenu-list a.submenu:hover {
+  color: #000;
+  transition: color 0.3s;
+}
