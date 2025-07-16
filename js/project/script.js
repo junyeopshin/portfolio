@@ -120,8 +120,8 @@ window.addEventListener("load", () => {
 });
 
 document.querySelector("article.runcanvas").addEventListener("click", () => {
-  window.location.href = "/pages/runCanvas.html";
+  window.location.href = "pages/runcanvas.html";
 });
 document.querySelector("article.wtd").addEventListener("click", () => {
-  window.location.href = "wtdready.html";
+  window.location.href = "pages/wtdready.html";
 });
