@@ -123,5 +123,5 @@ document.querySelector("article.runcanvas").addEventListener("click", () => {
   window.location.href = "/pages/runCanvas.html";
 });
 document.querySelector("article.wtd").addEventListener("click", () => {
-  window.location.href = "/pages/wtdready.html";
+  window.location.href = "wtdready.html";
 });
