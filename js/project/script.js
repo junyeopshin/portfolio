@@ -119,9 +119,16 @@ window.addEventListener("load", () => {
   });
 });
 
+// 클릭시 이동
 document.querySelector("article.runcanvas").addEventListener("click", () => {
   window.location.href = "runcanvas.html";
 });
 document.querySelector("article.wtd").addEventListener("click", () => {
   window.location.href = "wtdready.html";
+});
+document.querySelector("article.knowtaste").addEventListener("click", () => {
+  window.location.href = "knowtaste.html";
+});
+document.querySelector("article.sennheiser").addEventListener("click", () => {
+  window.location.href = "sennheiser.html";
 });
