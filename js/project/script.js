@@ -119,22 +119,34 @@ window.addEventListener("load", () => {
   });
 });
 
-// 클릭시 이동
+// 아티클 연결 링크
 document.querySelector("article.runcanvas").addEventListener("click", () => {
   window.location.href = "runcanvas.html";
-});
-document.querySelector("article.wtd").addEventListener("click", () => {
-  window.location.href = "wtdready.html";
 });
 document.querySelector("article.knowtaste").addEventListener("click", () => {
   window.location.href = "knowtaste.html";
 });
-document.querySelector("article.sennheiser").addEventListener("click", () => {
-  window.location.href = "sennheiser.html";
+document.querySelector("article.dongbaek").addEventListener("click", () => {
+  window.location.href = "dongbaek.html";
+});
+document.querySelector("article.jjtechouse").addEventListener("click", () => {
+  window.location.href = "jjtechouse.html";
+});
+document.querySelector("article.samsungfire").addEventListener("click", () => {
+  window.location.href = "samsungfire.html";
+});
+document.querySelector("article.al").addEventListener("click", () => {
+  window.location.href = "al.html";
 });
 document.querySelector("article.ondoor").addEventListener("click", () => {
   window.location.href = "aiondoor.html";
 });
-document.querySelector("article.samsungfire").addEventListener("click", () => {
-  window.location.href = "samsungfire.html";
+document.querySelector("article.sennheiser").addEventListener("click", () => {
+  window.location.href = "sennheiser.html";
+});
+document.querySelector("article.wtd").addEventListener("click", () => {
+  window.location.href = "wtdready.html";
+});
+document.querySelector("article.perplexity").addEventListener("click", () => {
+  window.location.href = "perplexity.html";
 });
