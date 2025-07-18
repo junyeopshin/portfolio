@@ -132,3 +132,9 @@ document.querySelector("article.knowtaste").addEventListener("click", () => {
 document.querySelector("article.sennheiser").addEventListener("click", () => {
   window.location.href = "sennheiser.html";
 });
+document.querySelector("article.ondoor").addEventListener("click", () => {
+  window.location.href = "aiondoor.html";
+});
+document.querySelector("article.samsungfire").addEventListener("click", () => {
+  window.location.href = "samsungfire.html";
+});
