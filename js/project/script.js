@@ -135,8 +135,8 @@ document.querySelector("article.jjtechouse").addEventListener("click", () => {
 document.querySelector("article.samsungfire").addEventListener("click", () => {
   window.location.href = "samsungfire.html";
 });
-document.querySelector("article.al").addEventListener("click", () => {
-  window.location.href = "al.html";
+document.querySelector("article.pubg").addEventListener("click", () => {
+  window.location.href = "pubg.html";
 });
 document.querySelector("article.ondoor").addEventListener("click", () => {
   window.location.href = "aiondoor.html";

@@ -165,9 +165,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #bbb;
-  font-size: 20px;
+  color: #aaa;
+  font-size: 18px;
   white-space: nowrap;
+  margin: 0 10px;
 }
 .submenu-list a.submenu:hover {
   color: #000;
